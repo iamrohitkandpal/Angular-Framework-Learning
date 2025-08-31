@@ -1,0 +1,31 @@
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-inline: 16px;
+    padding-block: 10px;
+    background-color: gray;
+}
+
+nav {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+
+    span{
+        &:hover {
+            color: aqua;
+        }
+    }
+    ul {
+        list-style: none;
+
+        li {
+            &:hover {
+                color: aqua;
+            }
+        }
+    }
+}
