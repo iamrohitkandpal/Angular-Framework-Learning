@@ -1,0 +1,45 @@
+<table>
+    <tr>
+        <td>
+            {{courseName}}
+        </td>
+        <td>
+            {{productNum}}
+        </td>
+        <td>
+            <!-- {{fullName}} -->
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input type="text" value="{{courseName}}">
+        </td>
+        <td>
+            <input type="text" [max]="maxLen" [minLength]="minChar">
+        </td>
+        <td>
+            <p [class]="myClassName">This is sample text</p>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <button (click)="showWelcomeMessage()">Show message</button>
+        </td>
+        <td>
+            <button (click)="changeCourseName()">Change Name</button>
+        </td>
+        <td>
+            <select name="" id="" (change)="onCityChange($event)">
+                <option value="Pune">Pune</option>
+                <option value="Nagpur">Nagpur</option>
+                <option value="Mumbai">Mumbai</option>
+                <option value="Khandala">Khandala</option>
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input type="text" [(ngModel)]="courseName">
+        </td>
+    </tr>
+</table>
