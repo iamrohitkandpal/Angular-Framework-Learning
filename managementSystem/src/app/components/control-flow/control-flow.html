@@ -1,0 +1,75 @@
+<table>
+    <tr>
+        <td>
+            @if(paraVivibilty == true) {
+            <p>This is Sample para in Flow</p>
+            } @else {
+            <p>Peekaboo visibility is gone!</p>
+            }
+        </td>
+        <td>
+            <button class="btn btn-success" (click)="visibility()">Show P</button>
+        </td>
+        <td>
+            <button (click)="visibility()">Hide P</button>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            @if (startingMonth == "jan") {
+            <p>January</p>
+            } @else if (startingMonth == "feb") {
+            <p>February</p>
+            } @else {
+            <p>I don't know this month</p>
+            }
+        </td>
+        <td>
+            <input type="text" [(ngModel)]="startingMonth" name="" id="">
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <ul>
+                @for (item of cityList; track $index) {
+                <li>{{item}}</li>
+                }
+            </ul>
+        </td>
+        <td>
+            <select name="" id="">
+                @for (item of cityList; track $index) {
+                <option value="{{item}}">{{item}}</option>
+                }
+            </select>
+        </td>
+    </tr>
+</table>
+
+<br>
+<table>
+    <thead>
+        <tr>
+            <th>Sr No</th>
+            <th>Name</th>
+            <th>City</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for (item of studentList; track $index) {
+        <tr>
+            <td>{{$index + 1}}</td>
+            <td>{{item.name}}</td>
+            <td>{{item.city}}</td>
+            <td>
+                @if (item.isActive) {
+                Active
+                } @else {
+                Not Active
+                }
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
